@@ -3,6 +3,6 @@ Feature: Login Functionality Feature
   I want to run the cucumber test to verify it is working
 
   Scenario: Verification of Reset button
-    Given Open the Firefox and launch the application
+    Given Open the Chrome and launch the application
     When Enter the Username and Password
     Then Reset the credential

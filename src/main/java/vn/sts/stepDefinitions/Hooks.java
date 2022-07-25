@@ -14,15 +14,12 @@ public final class Hooks {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Hooks.class);
 
-    private Hooks() {
-    }
-
     public static WebDriver getDriver() {
         return webDriver;
     }
 
     @Before
-    private void before() {
+    public void before() {
         try {
             webDriver = DriverFactory.getDriverInstance(DriverManagerType.CHROME);
         } catch (Exception e) {
@@ -32,7 +29,7 @@ public final class Hooks {
     }
 
     @After
-    private void after() {
+    public void after() {
         webDriver.close();
     }
 }
