@@ -1,7 +1,7 @@
 selenium-cucumber-java
 =================
 
-Automation Testing Using Java, Selenium, Cucumber
+Automation Testing Using Java, Selenium and Cucumber
 
 selenium-cucumber is a behavior driven development (BDD) approach to write automation test script to test Web.
 It enables you to write and execute automated acceptance/unit tests.
