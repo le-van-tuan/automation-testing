@@ -9,7 +9,7 @@ public class LoginPage extends BaseTestPage {
     }
 
     public void open() {
-        this.goTo("https://selenium-training.herokuapp.com");
+        this.goTo("https://selenium-training.herokuapp.com/login");
     }
 
     public void enterLoginInfo(String username, String password) {
