@@ -19,7 +19,7 @@ public final class Hooks {
     }
 
     @Before
-    public void before() {
+    public void beforeScenario() {
         try {
             webDriver = DriverFactory.getDriverInstance(DriverManagerType.CHROME);
         } catch (Exception e) {
@@ -29,7 +29,8 @@ public final class Hooks {
     }
 
     @After
-    public void after() {
+    public void afterScenario() throws InterruptedException {
+        Thread.sleep(2000);
         webDriver.close();
     }
 }

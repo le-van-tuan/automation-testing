@@ -29,7 +29,7 @@ public final class DriverFactory {
                     throw new RuntimeException("Driver " + type.name() + " is unsupported!");
             }
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofMillis(20));
+            driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
         }
         return driver;
     }

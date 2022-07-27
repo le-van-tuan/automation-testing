@@ -3,7 +3,6 @@ package vn.sts.stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import vn.sts.pageObject.LoginPage;
 import vn.sts.utils.BaseTestStep;
 
@@ -17,18 +16,17 @@ public class LoginStep extends BaseTestStep {
     }
 
     @Given("^Open the Chrome and launch the application$")
-    public void open_the_Firefox_and_launch_the_application() throws Throwable {
-        driver.get("http://demo.guru99.com/v4");
+    public void open_the_Chrome_and_launch_the_application() throws Throwable {
+        this.loginPage.open();
     }
 
     @When("^Enter the Username and Password$")
     public void enter_the_Username_and_Password() throws Throwable {
-        driver.findElement(By.name("uid")).sendKeys("username12");
-        driver.findElement(By.name("password")).sendKeys("password12");
+        this.loginPage.enterLoginInfo("robin@gmail.com", "123456");
     }
 
-    @Then("^Reset the credential$")
+    @Then("^Login successfully$")
     public void Reset_the_credential() throws Throwable {
-        driver.findElement(By.name("btnReset")).click();
+        this.loginPage.clickLoginButton();
     }
 }

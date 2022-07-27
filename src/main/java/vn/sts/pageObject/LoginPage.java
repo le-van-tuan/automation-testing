@@ -1,36 +1,23 @@
 package vn.sts.pageObject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class LoginPage {
-
-    public WebDriver driver;
-
-    private WebElement element;
+public class LoginPage extends BaseTestPage {
 
     public LoginPage(WebDriver dr) {
-        driver = dr;
+        super(dr);
     }
 
-    public WebElement ip_username() {
-        element = driver.findElement(By.xpath("//input[@id='usr']"));
-        return element;
+    public void open() {
+        this.goTo("https://selenium-training.herokuapp.com");
     }
 
-    public WebElement ip_password() {
-        element = driver.findElement(By.xpath("//input[@id='pwd']"));
-        return element;
+    public void enterLoginInfo(String username, String password) {
+        enterText("#session_email", username);
+        enterText("#session_password", password);
     }
 
-    public WebElement btn_login() {
-        element = driver.findElement(By.xpath("//input[@type='submit']"));
-        return element;
-    }
-
-    public WebElement txt_successfully() {
-        element = driver.findElement(By.xpath("//h3[@class='success']"));
-        return element;
+    public void clickLoginButton() {
+        click("/html/body/div/div/div/form/input[5]");
     }
 }

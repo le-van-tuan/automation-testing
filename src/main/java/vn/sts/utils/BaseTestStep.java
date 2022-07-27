@@ -5,10 +5,9 @@ import vn.sts.stepDefinitions.Hooks;
 
 public class BaseTestStep {
 
-    public WebDriver driver;
+    protected WebDriver driver;
 
     public BaseTestStep() {
         this.driver = Hooks.getDriver();
-        ElementFinder.init(driver);
     }
 }
